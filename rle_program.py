@@ -1,11 +1,11 @@
-def print_menu():
+from console_gfx import ConsoleGfx
 
-    print('Welcome to the RLE image encoder!\n'
-          '\n'
-          'Displaying Spectrum Image:\n'
-          'DISPLAY IMAGE HERE\n'
-          '\n'
-          '\n'
+
+def print_menu():
+    print('Welcome to the RLE image encoder!\n\n'
+          'Displaying Spectrum Image:')
+    ConsoleGfx.display_image(ConsoleGfx.test_rainbow)
+    print('\n\n'
           'RLE Menu\n'
           '--------\n'
           '0. Exit\n'
@@ -20,9 +20,30 @@ def print_menu():
           '9. Display Hex Flat Data\n'
           '\n')
 
+def load_file():
+    file = input('Enter name of file to load: ')
+    ConsoleGfx.load_file(file)
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    print_menu()
+    program_on = True
+    while program_on:
+        print_menu()
+        menu_option = input('Select a Menu Option: ')
+
+        if menu_option == '1':
+            load_file()
+        elif menu_option == '2':
+            ConsoleGfx.test_image
+            print('Test image data loaded.')
+        elif menu_option == '3':
+            pass
+        elif menu_option == '4':
+            pass
+        elif menu_option == '5':
+            pass
+        elif menu_option == '6':
+            ConsoleGfx.display_image(ConsoleGfx.test_image)
+
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
